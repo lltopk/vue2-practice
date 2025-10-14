@@ -10,8 +10,8 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import ScopeThis from './components/ScopeThis.vue'
-
+// import ScopeThis from './components/ScopeThis.vue'
+import ScopeThis from '@/components/ScopeThis.vue'
 export default {
   name: 'App',
   components: {
