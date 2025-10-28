@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "exceljs": "^4.3.0",
+    "spark-md5": "^3.0.2",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
