@@ -3,9 +3,11 @@
     <el-button type="primary" @click="openHelloWorld">Open HelloWorld</el-button>
     <el-button type="primary" @click="openScopeThis">Open ScopeThis</el-button>
     <el-button type="primary" @click="openElTable">Open ElTable</el-button>
+    <el-button type="primary" @click="openElForm">Open ElForm</el-button>
     <HelloWorld msg="Welcome to Your Vue.js App" :visibleProp="visibleHelloWorld"/>
     <ScopeThis :visibleProp = "visibleScopeThis"/>
     <ElTable :visibleProp = "visibleElTable"/>
+    <ElForm :visibleProp = "visibleElForm"/>
   </div>
 </template>
 
@@ -13,18 +15,21 @@
 import HelloWorld from './components/HelloWorld.vue'
 import ScopeThis from '@/components/ScopeThis.vue'
 import ElTable from '@/components/ElTable.vue'
+import ElForm from '@/components/ElForm.vue'
 export default {
   name: 'App',
   components: {
     HelloWorld,
     ScopeThis,
-    ElTable
+    ElTable,
+    ElForm
   },
   data() {
     return {
       visibleHelloWorld: false,
       visibleScopeThis: false,
-      visibleElTable: false
+      visibleElTable: false,
+      visibleElForm: false
     }
   },
   methods: {
@@ -37,6 +42,9 @@ export default {
     openElTable() {
       this.visibleElTable = !this.visibleElTable;
     },
+    openElForm() {
+      this.visibleElForm = !this.visibleElForm;
+    }
 
   }
 }
