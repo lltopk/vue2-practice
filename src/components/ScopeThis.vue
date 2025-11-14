@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="visibleProp">
         <h2>Scope This</h2>
         <p>{{ message }}</p>
     </div>
@@ -11,6 +11,9 @@ import excel from 'exceljs';
 import spark from 'spark-md5'
 // var spark = require('spark-md5')
 export default {
+  props: {
+    visibleProp: Boolean
+  },
   data() {
     return {
       message: 'Hello Vue'

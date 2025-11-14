@@ -1,5 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="hello" v-if="visibleProp">
+    <img alt="Vue logo" src="@/assets/logo.png">
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -34,7 +35,13 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    visibleProp: Boolean
+  },
+  watch: {
+    visibleProp(newVal) {
+      console.log('HelloWorld visibleProp changed:', newVal);
+    }
   }
 }
 </script>
