@@ -26,6 +26,8 @@ export default {
   },
   created(){
     console.log("this.$globalVar:",this.$globalVar);
+    this.$store.commit('increment');
+    console.log("this.$store:",this.$store);//store.state == 2
   },
   data() {
     return {
