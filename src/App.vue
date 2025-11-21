@@ -24,6 +24,9 @@ export default {
     ElTable,
     ElForm
   },
+  created(){
+    console.log("this.$globalVar:",this.$globalVar);
+  },
   data() {
     return {
       visibleHelloWorld: false,
