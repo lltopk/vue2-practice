@@ -1,11 +1,16 @@
 # vue2-practice
-vue2-practice
+
+references:
 
 > vue2.js : https://v2.cn.vuejs.org/v2/guide/installation.html
 >
->vue2 cli: https://cli.vuejs.org/#getting-started
+> vue2 cli: https://cli.vuejs.org/#getting-started
+>
+> element ui: https://element.eleme.cn/#/zh-CN
+>
+> vuex: https://v3.vuex.vuejs.org/zh/
 
-## 初始化vue2项目
+## create project with cli
 ```shell
 npm install -g @vue/cli
 # OR
@@ -17,26 +22,17 @@ vue create my-project
 vue ui
 ```
 
-
-## Project setup
+## node scripts
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
-```
-
-### Lints and fixes files
-```
 npm run lint
 ```
+Customize configuration: See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## libs
+```
+npm i element-ui
+npm install vuex@3
+```
