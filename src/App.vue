@@ -8,6 +8,7 @@
     <ScopeThis :visibleProp = "visibleScopeThis"/>
     <ElTable :visibleProp = "visibleElTable"/>
     <ElForm :visibleProp = "visibleElForm"/>
+    <VuexStore/>
   </div>
 </template>
 
@@ -16,19 +17,26 @@ import HelloWorld from './components/HelloWorld.vue'
 import ScopeThis from '@/components/ScopeThis.vue'
 import ElTable from '@/components/ElTable.vue'
 import ElForm from '@/components/ElForm.vue'
+import VuexStore from '@/components/VuexStore.vue'
 export default {
   name: 'App',
   components: {
     HelloWorld,
     ScopeThis,
     ElTable,
-    ElForm
+    ElForm,
+    VuexStore
   },
   created(){
-    console.log("this.$globalVar:",this.$globalVar);
-    this.$store.commit('increment');
-    console.log("this.$store:",this.$store);//store.state == 2
+
   },
+  computed:{
+
+  },
+  watch:{
+
+  },
+
   data() {
     return {
       visibleHelloWorld: false,

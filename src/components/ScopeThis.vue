@@ -5,7 +5,6 @@
     </div>
 </template>
 <script>
-import { ignore } from '@/main';
 // import spark from 'spark-md5';
 import excel from 'exceljs';
 import spark from 'spark-md5'
@@ -22,10 +21,9 @@ export default {
   methods: {
     showThis() {
       excel.DocumentType
-      ignore();// auto import by IDE with jsconfig.json
       spark.hash('hello');// auto import by IDE with jsconfig.json
       spark.ArrayBuffer
-      console.log(this); // ✅ 正确！这里的this指向vm实例
+      console.log("showThis",this); // ✅ 正确！这里的this指向vm实例
     }
   },
   mounted() {
