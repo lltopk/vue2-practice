@@ -54,7 +54,9 @@ export default {
     },
     // 使用 Vuex 的 mapState 辅助函数
     ...mapState('single_store',{
-      count: state => state.count,
+      //这里每一个计算属性都由一个函数定义: s => s.count,  
+      // 最终vue框架会将该函数视为回调函数, 并将当前store(single_store)的state给到回调函数的参数s触发回调
+      count: s => s.count,
     }),
     //计算属性的名称与 state 的子节点名称(count)相同时，可以简写为数组形式
     ...mapState('single_store',['count']),
