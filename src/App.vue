@@ -4,11 +4,12 @@
     <el-button type="primary" @click="openScopeThis">Open ScopeThis</el-button>
     <el-button type="primary" @click="openElTable">Open ElTable</el-button>
     <el-button type="primary" @click="openElForm">Open ElForm</el-button>
+    <el-button type="primary" @click="openVuex">Open Vuex</el-button>
     <HelloWorld msg="Welcome to Your Vue.js App" :visibleProp="visibleHelloWorld"/>
     <ScopeThis :visibleProp = "visibleScopeThis"/>
     <ElTable :visibleProp = "visibleElTable"/>
     <ElForm :visibleProp = "visibleElForm"/>
-    <VuexStore/>
+    <VuexStore :visibleProp = "visibleVuex"/>
   </div>
 </template>
 
@@ -42,7 +43,8 @@ export default {
       visibleHelloWorld: false,
       visibleScopeThis: false,
       visibleElTable: false,
-      visibleElForm: false
+      visibleElForm: false,
+      visibleVuex: false
     }
   },
   methods: {
@@ -57,7 +59,10 @@ export default {
     },
     openElForm() {
       this.visibleElForm = !this.visibleElForm;
-    }
+    },
+    openVuex() {
+      this.visibleVuex = !this.visibleVuex;
+    },
 
   }
 }

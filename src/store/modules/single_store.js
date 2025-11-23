@@ -34,7 +34,10 @@ const mutations= {
   //支持载荷参数
   incrementWithPayload (state,payload) {
     state.count += payload.amount
-  },    
+  },   
+  updateCount (state,payload) {
+    state.count = payload
+  },  
 }
 
 

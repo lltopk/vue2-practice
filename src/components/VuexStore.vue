@@ -1,6 +1,15 @@
 <template>
-  <div>
+  <div v-if="visibleProp">
+    <!-- 当在严格模式中使用 Vuex 时，在属于 Vuex 的 state 上使用 v-model 会比较棘手：
+    假设这里的 count 是在计算属性中返回的一个属于 Vuex store 的对象，在用户输入时，v-model 会试图直接修改 count。
+    在严格模式中，由于这个修改不是在 mutation 函数中执行的, 这里会抛出一个错误。 -->
+    <!-- <input v-model="count"> -->
 
+    <!-- 用“Vuex 的思维”去解决这个问题的方法是：将v-model拆开,  分别给 <input> 中绑定 value，然后侦听 input 或者 change 事件，在事件回调中调用一个方法: -->
+    <!-- <input :value="count" @input="updateCount($event)"> -->
+
+    <!-- 另一个最优雅的方法是方法是使用带有 setter 的双向绑定计算属性：自定义计算属性的getter和setter方式 -->
+    <input v-model="count">
   </div>
 </template>
 
@@ -14,6 +23,9 @@ export default {
   name: 'VuexStore',
   components: {
 
+  },
+  props: {
+    visibleProp: Boolean
   },
   created(){
     console.log("this.$globalVar:",this.$globalVar);
@@ -53,13 +65,21 @@ export default {
       return 0;
     },
     // 使用 Vuex 的 mapState 辅助函数
-    ...mapState('single_store',{
-      //这里每一个计算属性都由一个函数定义: s => s.count,  
-      // 最终vue框架会将该函数视为回调函数, 并将当前store(single_store)的state给到回调函数的参数s触发回调
-      count: s => s.count,
-    }),
-    //计算属性的名称与 state 的子节点名称(count)相同时，可以简写为数组形式
-    ...mapState('single_store',['count']),
+    // ...mapState('single_store',{
+    //   //这里每一个计算属性都由一个函数定义: s => s.count,  
+    //   // 最终vue框架会将该函数视为回调函数, 并将当前store(single_store)的state给到回调函数的参数s触发回调
+    //   count: s => s.count,
+    // }),
+   //计算属性的名称与 state 的子节点名称(count)相同时，可以简写为数组形式
+    // ...mapState('single_store',['count']),
+    count:{
+      get () {
+        return this.$store.state.single_store.count
+      },
+      set (value) {
+        this.$store.commit('single_store/updateCount', value)
+      }
+    },
     // 使用 Vuex 的 mapGetters 辅助函数
     ...mapGetters('single_store',{
       doneTodos:'doneTodos',//该属性是个对象
@@ -109,7 +129,13 @@ export default {
     ]),
     ...mapActions('single_store',{
       addAsync: 'incrementAsync' // 将 `this.add()` 映射为 `this.$store.dispatch('incrementAsync')`
-    })
+    }),
+    //input原生标签接收的是原生DOM事件
+    //- `event.target`：触发事件的 DOM 元素（这里是 `<input>`）
+    // - `event.target.value`：输入框的当前值
+    updateCount(event){
+      this.$store.commit('single_store/updateCount', event.target.value)
+    }
   }
 }
 </script>
