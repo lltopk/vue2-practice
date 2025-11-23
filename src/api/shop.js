@@ -8,13 +8,15 @@ const _products = [
 ]
 
 export default {
-  getProducts (cb) {
+  //provider(_products) with callback, execute callback function :cb
+  getProducts1 (cb) {
     setTimeout(() => {
       cb(_products)
       console.log('商品加载完成')
     }, 1000)
   },
-  getProducts2 (cb) {
+  // pure provider, not consume
+  getProducts2 () {
     return new Promise((resolve,reject)=>{
       setTimeout(() => {
         resolve(_products)

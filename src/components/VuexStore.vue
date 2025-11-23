@@ -38,7 +38,7 @@ export default {
   },
   async mounted(){
     //test action promise await
-    await this.$store.dispatch('products/initProducts');
+    this.$store.dispatch('products/initProducts');
     console.log("mounted products store module state#all:",this.$store.state.products.all);
     console.log("mounted products store module getters#getAllProducts:",this.getAllProducts);
     this.$store.commit('products/decrementProductInventory',{id: 1});
