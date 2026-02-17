@@ -5,11 +5,13 @@
     <el-button type="primary" @click="openElTable">Open ElTable</el-button>
     <el-button type="primary" @click="openElForm">Open ElForm</el-button>
     <el-button type="primary" @click="openVuex">Open Vuex</el-button>
+    <el-button type="primary" @click="openUserSlot">Open UserSlot</el-button>
     <HelloWorld msg="Welcome to Your Vue.js App" :visibleProp="visibleHelloWorld"/>
     <ScopeThis :visibleProp = "visibleScopeThis"/>
     <ElTable :visibleProp = "visibleElTable"/>
     <ElForm :visibleProp = "visibleElForm"/>
     <VuexStore :visibleProp = "visibleVuex"/>
+    <UserSlot :visibleProp = "visibleUserSlot"/>
   </div>
 </template>
 
@@ -19,6 +21,7 @@ import ScopeThis from '@/components/ScopeThis.vue'
 import ElTable from '@/components/ElTable.vue'
 import ElForm from '@/components/ElForm.vue'
 import VuexStore from '@/components/VuexStore.vue'
+import UserSlot from '@/slot/UserSlot.vue'
 export default {
   name: 'App',
   components: {
@@ -26,7 +29,8 @@ export default {
     ScopeThis,
     ElTable,
     ElForm,
-    VuexStore
+    VuexStore,
+    UserSlot
   },
   created(){
 
@@ -44,7 +48,8 @@ export default {
       visibleScopeThis: false,
       visibleElTable: false,
       visibleElForm: false,
-      visibleVuex: false
+      visibleVuex: false,
+      visibleUserSlot: false,
     }
   },
   methods: {
@@ -62,6 +67,9 @@ export default {
     },
     openVuex() {
       this.visibleVuex = !this.visibleVuex;
+    },
+    openUserSlot() {
+      this.visibleUserSlot = !this.visibleUserSlot;
     },
 
   }
