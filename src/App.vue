@@ -4,6 +4,7 @@
     <el-button type="primary" @click="openScopeThis">Open ScopeThis</el-button>
     <el-button type="primary" @click="openElTable">Open ElTable</el-button>
     <el-button type="primary" @click="openElForm">Open ElForm</el-button>
+    <el-button type="primary" @click="openElSelector">Open Selector</el-button>
     <el-button type="primary" @click="openVuex">Open Vuex</el-button>
     <el-button type="primary" @click="openUserSlot">Open UserSlot</el-button>
     <el-button type="primary" @click="openCbChain">Open CbChain</el-button>
@@ -12,6 +13,7 @@
     <ScopeThis :visibleProp = "visibleScopeThis"/>
     <ElTable :visibleProp = "visibleElTable"/>
     <ElForm :visibleProp = "visibleElForm"/>
+    <ElSelector :visibleProp = "visibleElSelector"/>
     <VuexStore :visibleProp = "visibleVuex"/>
     <UserSlot :visibleProp = "visibleUserSlot"/>
     <CbChain :visibleProp = "visibleCbChain"/>
@@ -24,10 +26,12 @@ import HelloWorld from './components/HelloWorld.vue'
 import ScopeThis from '@/components/ScopeThis.vue'
 import ElTable from '@/components/ElTable.vue'
 import ElForm from '@/components/ElForm.vue'
+import ElSelector from '@/components/ElSelector.vue'
 import VuexStore from '@/components/VuexStore.vue'
 import UserSlot from '@/slot/UserSlot.vue'
 import CbChain from '@/invokeCbChain/Index.vue'
 import Emit from '@/emit/Index.vue'
+
 export default {
   name: 'App',
   components: {
@@ -38,7 +42,8 @@ export default {
     VuexStore,
     UserSlot,
     CbChain,
-    Emit
+    Emit,
+    ElSelector
   },
   created(){
 
@@ -56,6 +61,7 @@ export default {
       visibleScopeThis: false,
       visibleElTable: false,
       visibleElForm: false,
+      visibleElSelector: false,
       visibleVuex: false,
       visibleUserSlot: false,
       visibleCbChain: false,
@@ -74,6 +80,9 @@ export default {
     },
     openElForm() {
       this.visibleElForm = !this.visibleElForm;
+    },
+    openElSelector() {
+      this.visibleElSelector = !this.visibleElSelector;
     },
     openVuex() {
       this.visibleVuex = !this.visibleVuex;
