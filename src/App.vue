@@ -5,6 +5,7 @@
     <el-button type="primary" @click="openElTable">Open ElTable</el-button>
     <el-button type="primary" @click="openElForm">Open ElForm</el-button>
     <el-button type="primary" @click="openElSelector">Open Selector</el-button>
+    <el-button type="primary" @click="openElEnterableTable">Open EnterableTable</el-button>
     <el-button type="primary" @click="openVuex">Open Vuex</el-button>
     <el-button type="primary" @click="openUserSlot">Open UserSlot</el-button>
     <el-button type="primary" @click="openCbChain">Open CbChain</el-button>
@@ -14,6 +15,7 @@
     <ElTable :visibleProp = "visibleElTable"/>
     <ElForm :visibleProp = "visibleElForm"/>
     <ElSelector :visibleProp = "visibleElSelector"/>
+    <ElEnterableTable :visibleProp = "visibleElEnterableTable"/>
     <VuexStore :visibleProp = "visibleVuex"/>
     <UserSlot :visibleProp = "visibleUserSlot"/>
     <CbChain :visibleProp = "visibleCbChain"/>
@@ -27,6 +29,7 @@ import ScopeThis from '@/components/ScopeThis.vue'
 import ElTable from '@/components/ElTable.vue'
 import ElForm from '@/components/ElForm.vue'
 import ElSelector from '@/components/ElSelector.vue'
+import ElEnterableTable from '@/components/ElEnterableTable.vue'
 import VuexStore from '@/components/VuexStore.vue'
 import UserSlot from '@/slot/UserSlot.vue'
 import CbChain from '@/invokeCbChain/Index.vue'
@@ -39,11 +42,12 @@ export default {
     ScopeThis,
     ElTable,
     ElForm,
+    ElSelector,
+    ElEnterableTable,
     VuexStore,
     UserSlot,
     CbChain,
     Emit,
-    ElSelector
   },
   created(){
 
@@ -62,6 +66,7 @@ export default {
       visibleElTable: false,
       visibleElForm: false,
       visibleElSelector: false,
+      visibleElEnterableTable:false,
       visibleVuex: false,
       visibleUserSlot: false,
       visibleCbChain: false,
@@ -83,6 +88,9 @@ export default {
     },
     openElSelector() {
       this.visibleElSelector = !this.visibleElSelector;
+    },
+    openElEnterableTable() {
+      this.visibleElEnterableTable = !this.visibleElEnterableTable;
     },
     openVuex() {
       this.visibleVuex = !this.visibleVuex;
