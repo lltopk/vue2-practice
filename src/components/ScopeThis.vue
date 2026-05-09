@@ -1,8 +1,8 @@
 <template>
-    <div v-if="visibleProp">
-        <h2>Scope This</h2>
-        <p>{{ message }}</p>
-    </div>
+  <div v-if="visibleProp">
+    <h2>Scope This</h2>
+    <p>{{ message }}</p>
+  </div>
 </template>
 <script>
 // import spark from 'spark-md5';
@@ -23,13 +23,13 @@ export default {
       excel.DocumentType
       spark.hash('hello');// auto import by IDE with jsconfig.json
       spark.ArrayBuffer
-      console.log("showThis",this); // ✅ 正确！这里的this指向vm实例
+      console.log("showThis", this); // ✅ 正确！这里的this指向vm实例
     }
   },
   mounted() {
     console.log(this.message);
     setTimeout(() => {
-        // ✅ 正确！箭头函数的this继承外部, 这里的外部到了mounted(), mounted级别拥有vm实例this
+      // ✅ 正确！箭头函数的this继承外部, 这里的外部到了mounted(), mounted级别拥有vm实例this
       this.message = 'Updated';
     }, 1000);
     this.showThis();

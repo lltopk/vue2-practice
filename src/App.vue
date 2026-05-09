@@ -10,16 +10,16 @@
     <el-button type="primary" @click="openUserSlot">Open UserSlot</el-button>
     <el-button type="primary" @click="openCbChain">Open CbChain</el-button>
     <el-button type="primary" @click="openEmit">Open Emit</el-button>
-    <HelloWorld msg="Welcome to Your Vue.js App" :visibleProp="visibleHelloWorld"/>
-    <ScopeThis :visibleProp = "visibleScopeThis"/>
-    <ElTable :visibleProp = "visibleElTable"/>
-    <ElForm :visibleProp = "visibleElForm"/>
-    <ElSelector :visibleProp = "visibleElSelector"/>
-    <ElEnterableTable :visibleProp = "visibleElEnterableTable"/>
-    <VuexStore :visibleProp = "visibleVuex"/>
-    <UserSlot :visibleProp = "visibleUserSlot"/>
-    <CbChain :visibleProp = "visibleCbChain"/>
-    <Emit :visibleProp = "visibleEmit"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" :visibleProp="visibleHelloWorld" />
+    <ScopeThis :visibleProp="visibleScopeThis" />
+    <ElTable :visibleProp="visibleElTable" />
+    <ElForm :visibleProp="visibleElForm" />
+    <ElSelector :visibleProp="visibleElSelector" />
+    <ElEnterableTable :visibleProp="visibleElEnterableTable" />
+    <VuexStore :visibleProp="visibleVuex" />
+    <UserSlot :visibleProp="visibleUserSlot" />
+    <CbChain :visibleProp="visibleCbChain" />
+    <Emit :visibleProp="visibleEmit" />
   </div>
 </template>
 
@@ -49,13 +49,13 @@ export default {
     CbChain,
     Emit,
   },
-  created(){
+  created() {
 
   },
-  computed:{
+  computed: {
 
   },
-  watch:{
+  watch: {
 
   },
 
@@ -66,7 +66,7 @@ export default {
       visibleElTable: false,
       visibleElForm: false,
       visibleElSelector: false,
-      visibleElEnterableTable:false,
+      visibleElEnterableTable: false,
       visibleVuex: false,
       visibleUserSlot: false,
       visibleCbChain: false,

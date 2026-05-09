@@ -97,6 +97,8 @@ export default {
   },
   methods: {
     submitForm(formName) {
+      const deepBuleVar = "1";
+      console.log(deepBuleVar);
       this.$refs[formName].validate((valid) => {
         if (valid) {
           alert("submit!");
