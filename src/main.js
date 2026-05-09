@@ -8,7 +8,9 @@ import { currency } from './currency'
 
 Vue.prototype.$globalVar = 'globalVar';//原型链添加全局变量
 //Vue.prototype.$store = store //（不推荐）：在不传 store 时也可以手动设置 Vue.prototype.$store = store，但这不是 Vuex 官方推荐的注入方式。
-
+const arr = []
+arr.forEach((a) => { console.log("xx", a) })
+arr.forEach((a) => {console.log()})
 //注册vuex插件
 Vue.use(Vuex);
 //注册elementui框架
@@ -23,5 +25,3 @@ new Vue({
   //Vuex 提供了一个从根组件向所有子组件，以 store 选项的方式“注入”该 store 的机制：
   store// 等价于store: store    ES6 对象的 property 简写 (用在对象某个 property 的 key 和被传入的变量同名时)
 }).$mount('#app')
-
-
